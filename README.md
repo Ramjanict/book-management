@@ -13,4 +13,4 @@ npm install<br>
 npm start
 
 ## Live Hosting Link
-#### [Live Preview](https://book-management-topaz.vercel.app)
+#### [Live Preview](https://book-management-topaz.vercel.app){:target="_blank"}
