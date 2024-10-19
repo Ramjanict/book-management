@@ -1,5 +1,5 @@
 import React from "react";
-import BookList from "../components/BookList";
+import BookList from "../pages/BookList";
 import Slider from "../components/slider/Slider";
 
 const Home = () => {

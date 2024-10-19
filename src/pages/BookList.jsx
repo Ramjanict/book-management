@@ -1,15 +1,17 @@
-import { AiOutlineCaretDown, AiOutlineCaretUp } from "react-icons/ai";
-import ListCardLoading from "./loading/ListCardLoading";
+import {
+  MdOutlineKeyboardArrowDown,
+  MdOutlineKeyboardArrowUp,
+} from "react-icons/md";
+import ListCardLoading from "../components/loading/ListCardLoading";
 import React, { useContext, useState } from "react";
-import Pagination from "./pagination/Pagination";
-import CardLoding from "./loading/CardLoding";
+import Pagination from "../components/pagination/Pagination";
+import CardLoding from "../components/loading/CardLoding";
 import { IoGridSharp } from "react-icons/io5";
-import Dropdown from "./dropDown/Dropdown";
+import Dropdown from "../components/dropDown/Dropdown";
 import { FaThList } from "react-icons/fa";
 import { Context } from "../store/Store";
-import ListCard from "./carrd/ListCard";
-import Card from "./carrd/Card";
-
+import ListCard from "../components/carrd/ListCard";
+import Card from "../components/carrd/Card";
 const BookList = ({ title }) => {
   const { data } = useContext(Context);
   const [card, setCard] = useState(true);
@@ -44,16 +46,24 @@ const BookList = ({ title }) => {
   return (
     <div className="px-6 lg:px-12 xl:px-24 2xl:px-48 pt-5 pb-10 bg-[#F2F2F2]">
       <div className=" flex items-center justify-between bg-white p-4 rounded-md">
-        <div className="relative w-40">
+        <div className="relative">
           <button
             onClick={() => {
               setIsDropdownOpen((pre) => !pre);
             }}
             className="w-full px-4 py-2 rounded-md ring-1 ring-gray-100 flex items-center justify-between
-             border-4 border-transparent active:border-gray-50"
+             border-4 border-transparent active:border-gray-50 text-xl font-medium tracking-wide"
           >
             Select genre
-            {isDropdownOpen ? <AiOutlineCaretUp /> : <AiOutlineCaretDown />}
+            {isDropdownOpen ? (
+              <span className="text-2xl pt-1">
+                <MdOutlineKeyboardArrowUp />
+              </span>
+            ) : (
+              <span className="text-2xl pt-1">
+                <MdOutlineKeyboardArrowDown />
+              </span>
+            )}
           </button>
           {isDropdownOpen && (
             <Dropdown
@@ -63,7 +73,9 @@ const BookList = ({ title }) => {
             />
           )}
         </div>
-
+        <div className=" hidden sm:block">
+          <h2 className="text-xl md:text-2xl font-medium">{title}</h2>
+        </div>
         <div className="flex items-center gap-2 text-xl cursor-pointer">
           <span
             onClick={() => setCard(true)}
@@ -82,6 +94,8 @@ const BookList = ({ title }) => {
           />
         </div>
       </div>
+
+      <h2 className="text-center pt-4">{sort ? sort.sort : "All"}</h2>
 
       <div className="w-full flex justify-center flex-wrap gap-8 md:gap-16 py-8">
         {card

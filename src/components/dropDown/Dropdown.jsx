@@ -20,14 +20,17 @@ const Dropdown = ({ handleSorting, setIsDropdownOpen, setSort }) => {
     categoryWiseBook();
   }, []);
   return (
-    <div className="w-[330px] sm:w-[450px] h-[calc(100vh-70px)] absolute left-0 top-10 overflow-hidden z-10 ring-1 ring-gray-100 rounded-md ">
-      <div className="w-full h-full text-black overflow-y-scroll bg-slate-200 py-4">
+    <div
+      className="w-[330px] sm:w-[450px] h-[450px] absolute left-0 top-16 overflow-hidden 
+     bg-white shadow rounded-md z-50"
+    >
+      <div className="w-full h-full overflow-y-scroll py-1">
         <button
           onClick={() => {
             setSort("");
             setIsDropdownOpen(false);
           }}
-          className="w-full hover:bg-slate-300 text-left p-1 border-l-4 hover:border-primaryColor transition-all line-clamp-1 "
+          className="w-full text-left line-clamp-1 hover:bg-[#F3F4F6] px-4 py-2 "
         >
           All
         </button>
@@ -39,7 +42,7 @@ const Dropdown = ({ handleSorting, setIsDropdownOpen, setSort }) => {
                     handleSorting(e);
                     setIsDropdownOpen(false);
                   }}
-                  className="w-full hover:bg-slate-300 text-left p-1 border-l-4 hover:border-primaryColor transition-all line-clamp-1 "
+                  className="w-full text-left line-clamp-1 hover:bg-[#F3F4F6] px-4 py-2"
                   name="sort"
                   value={genre}
                   key={i}

@@ -21,7 +21,7 @@ const ListCard = ({ title, author, image, genre, book, id }) => {
           <Link
             to={"/book-details/" + book.id}
             onClick={ScrollTop}
-            className="text-2xl capitalize font-medium"
+            className="text-xl sm:text-2xl font-bold line-clamp-1"
           >
             {title}
           </Link>
@@ -41,7 +41,11 @@ const ListCard = ({ title, author, image, genre, book, id }) => {
           </button>
         </div>
         {author.map((author, index) => {
-          return <p key={index}>{author.name}</p>;
+          return (
+            <h2 className="font-bold" key={index}>
+              {author.name}
+            </h2>
+          );
         })}
 
         <p className="text line-clamp-1">{genre[0]}</p>

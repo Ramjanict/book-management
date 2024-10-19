@@ -1,5 +1,5 @@
 import { Link, useParams } from "react-router-dom";
-import BookList from "../components/BookList";
+import BookList from "../pages/BookList";
 import React, { useContext } from "react";
 import { Context } from "../store/Store";
 

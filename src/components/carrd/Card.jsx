@@ -44,11 +44,15 @@ const Card = ({ title, author, image, genre, book, id }) => {
           to={"/book-details/" + book.id}
           className=" text-center"
         >
-          <h1 className="text-lg capitalize font-bold  line-clamp-1 ">
+          <h1 className="text-xl capitalize font-bold  line-clamp-1">
             {title}
           </h1>
           {author.map((author, index) => {
-            return <p key={index}>{author.name}</p>;
+            return (
+              <h2 className="font-bold" key={index}>
+                {author.name}
+              </h2>
+            );
           })}
           <p className="text-xs line-clamp-1">{genre[0]}</p>
         </Link>
