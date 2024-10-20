@@ -1,8 +1,16 @@
-# React + Vite
+## Book Management Application
+This project is a book management application. Where users can search books by title and filter the books by genre, users can add a book wishlist and remove it from the wishlist in the browser localStorage.The application is fully responsive and works well on both desktop and mobile devices
+## Technology Stack
+JavaScript<br>
+React.js<br>
+Tailwind CSS<br>
+Context API<br>
+react-router-dom<br>
+react-toastify<br>
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Instructions to Run Locally
+npm install<br>
+npm start
 
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Live Hosting Link
+### <a href="https://book-management-topaz.vercel.app" target="_blank" rel="noopener">Live Preview</a>
